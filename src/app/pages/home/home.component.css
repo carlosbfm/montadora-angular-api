@@ -1,0 +1,95 @@
+.home-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%) !important; 
+  
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  margin-bottom: 100px;
+  background: #2b2157 !important; 
+}
+
+.accessibility-tools mat-icon {
+  color: #dcdde0 !important; /* Azul escuro corporativo */
+}
+
+.accessibility-tools {
+  display: flex;
+  gap: 2.5px;
+  color: #333333; 
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.cards-container {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.access-card {
+  width: 320px;
+  padding: 30px;
+  text-align: center;
+  border-radius: 12px;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2) !important;
+}
+
+.card-icon {
+  font-size: 64px !important;
+  width: 64px !important;
+  height: 64px !important;
+  margin-bottom: 20px;
+  color: #bfbfc2; 
+}
+
+.access-card h2 {
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #cfc1c1;
+}
+
+.access-card p {
+  color: #cfc1c1;
+  margin-bottom: 30px;
+  min-height: 40px;
+}
+
+.full-width {
+  width: 100%;
+  padding: 20px !important;
+  font-weight: bold;
+}
+
+.btn-corporate {
+  background-color: #455a64 !important;
+  color: white !important;
+}
+
+.footer {
+  text-align: center;
+  padding: 10px;
+  font-size: 0.8rem;
+  margin-top: 50px;
+  color: #ffffff; 
+}
+
+.logo-container svg {
+  height: 75px; 
+  width: auto;
+}
+

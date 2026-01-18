@@ -1,0 +1,60 @@
+# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
+
+# Compiled output
+/dist
+/tmp
+/out-tsc
+/bazel-out
+
+# Node
+/node_modules
+npm-debug.log
+yarn-error.log
+*.log
+
+# Security & Environment Variables (MUITO IMPORTANTE)
+.env
+.env.local
+.env.*.local
+*.key
+*.pem
+
+# IDEs and editors
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+*.swp
+*.swo
+
+# Visual Studio Code (Agora ignora tudo da pasta)
+.vscode/
+.history/
+
+# Miscellaneous
+/.angular/cache
+.sass-cache/
+/connect.lock
+/coverage
+/libpeerconnection.log
+testem.log
+/typings
+
+# Testing Artifacts (Cypress / Playwright)
+/cypress/videos
+/cypress/screenshots
+/playwright-report
+/test-results
+
+# System files (Windows / Mac / Linux)
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini

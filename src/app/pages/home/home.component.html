@@ -1,43 +1,54 @@
-<div class="home-wrapper">
+<div class="home-wrapper" [style.font-size.%]="fontSize" [class.dark-theme]="isDarkMode">
   <header class="top-bar">
-  <div class="logo-container">
-  <svg width="200" height="60" viewBox="0 0 220 80" xmlns="http://www.w3.org/2000/svg">
-    <path d="M15 60 L15 20 L30 45 L45 20 L45 60" stroke="#ffffff" stroke-width="8" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
-    <path d="M30 45 L40 60 L50 45" stroke="#FF4081" stroke-width="6" fill="none" stroke-linejoin="round" />
-    
-    <text x="65" y="40" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#ffffff">
-      Montadora
-    </text>
-    <text x="65" y="65" font-family="Arial, sans-serif" font-size="26" font-weight="900" fill="#ffffff">
-      Bonfim
-    </text>
-  </svg>
-</div>
+    <div class="logo-container">
+      <svg width="200" height="60" viewBox="0 0 220 80" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15 60 L15 20 L30 45 L45 20 L45 60" stroke="#ffffff" stroke-width="8" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+        <path d="M30 45 L40 60 L50 45" stroke="#FF4081" stroke-width="6" fill="none" stroke-linejoin="round" />
+        <text x="65" y="40" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#ffffff">Montadora</text>
+        <text x="65" y="65" font-family="Arial, sans-serif" font-size="26" font-weight="900" fill="#ffffff">Bonfim</text>
+      </svg>
+    </div>
+
     <div class="accessibility-tools">
-      <button mat-icon-button title="Aumentar Fonte"><mat-icon>zoom_in</mat-icon></button>
-      <button mat-icon-button title="Diminuir Fonte"><mat-icon>zoom_out</mat-icon></button>
-      <button mat-icon-button title="Modo Noturno"><mat-icon>dark_mode</mat-icon></button>
-      <button mat-icon-button title="Ajuda"><mat-icon>help_outline</mat-icon></button>
+      <button mat-icon-button (click)="decrementFont()" title="Diminuir Fonte">
+        <mat-icon>zoom_out</mat-icon>
+      </button>
+
+      <span class="font-indicator" *ngIf="showIndicator">
+        {{ fontSize }}%
+      </span>
+
+      <button mat-icon-button (click)="incrementFont()" title="Aumentar Fonte">
+        <mat-icon>zoom_in</mat-icon>
+      </button>
+      
+      <button mat-icon-button (click)="toggleDarkMode()" title="Alternar Tema">
+        <mat-icon>{{ isDarkMode ? 'dark_mode' : 'light_mode' }}</mat-icon>
+      </button>
     </div>
   </header>
 
   <main class="main-content">
     <div class="cards-container">
       <mat-card class="access-card">
-        <mat-card-content>
-          <mat-icon class="card-icon">person_search</mat-icon>
-          <h2>Sou Cliente</h2>
-          <p>Configure seu carro ou acompanhe seus pedidos.</p>
+        <mat-card-content class="card-layout">
+          <div class="content-top">
+            <mat-icon class="card-icon">person_search</mat-icon>
+            <h2>Sou Cliente</h2>
+            <p>Configure seu carro ou acompanhe seus pedidos.</p>
+          </div>
           <button mat-flat-button color="primary" class="full-width">Entrar</button>
         </mat-card-content>
       </mat-card>
 
       <mat-card class="access-card">
-        <mat-card-content>
-          <mat-icon class="card-icon">badge</mat-icon>
-          <h2>Área Interna (Funcionário)</h2>
-          <p>Acesso ao sistema de produção e RH.</p>
-          <button mat-flat-button class="btn-corporate full-width">Acesso Corporativo</button>
+        <mat-card-content class="card-layout">
+          <div class="content-top">
+            <mat-icon class="card-icon">badge</mat-icon>
+            <h2>Área Interna (Funcionário)</h2>
+            <p>Acesso ao sistema de produção e RH.</p>
+          </div>
+          <button mat-flat-button color="primary" class="btn-corporate full-width">Acesso Corporativo</button>
         </mat-card-content>
       </mat-card>
     </div>

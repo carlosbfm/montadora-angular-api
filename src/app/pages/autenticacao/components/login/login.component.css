@@ -1,0 +1,73 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%
+}
+
+.login-card {
+  width: 100%;
+  max-width: 1000px;
+  padding: 40px;
+  border-radius: 12px;
+  background: #e6dede;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.login-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #3a3434;
+  text-align: center;
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.login-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 25px;
+}
+
+button[mat-flat-button] {
+  padding: 10px 30px;
+  font-weight: bold;
+}
+
+/* Estilos para o Modo Escuro no Login */
+:host-context(.dark-theme) .login-card {
+  background-color: #242433 !important; /* Cor que você usou nos cards da Home */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+}
+
+:host-context(.dark-theme) .login-title {
+  color: #ffffff !important;
+}
+
+:host-context(.dark-theme) mat-label {
+  color: #b0b0b0 !important;
+}
+
+:host-context(.dark-theme) input {
+  color: #ffffff !important;
+  caret-color: #FF4081 !important; /* Cor rosa no cursor */
+}
+
+:host-context(.dark-theme) mat-icon {
+  color: #FF4081 !important;
+}
+
+:host-context(.dark-theme) ::ng-deep .mdc-notched-outline__leading,
+:host-context(.dark-theme) ::ng-deep .mdc-notched-outline__notch,
+:host-context(.dark-theme) ::ng-deep .mdc-notched-outline__trailing {
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+:host-context(.dark-theme) .btn-voltar {
+  color: #ffffff !important;
+}

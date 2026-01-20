@@ -23,35 +23,13 @@
       </button>
       
       <button mat-icon-button (click)="toggleDarkMode()" title="Alternar Tema">
-        <mat-icon>{{ isDarkMode ? 'dark_mode' : 'light_mode' }}</mat-icon>
+        <mat-icon>{{ isDarkMode ? 'light_mode' : 'dark_mode' }}</mat-icon>
       </button>
     </div>
   </header>
 
   <main class="main-content">
-    <div class="cards-container">
-      <mat-card class="access-card">
-        <mat-card-content class="card-layout">
-          <div class="content-top">
-            <mat-icon class="card-icon">person_search</mat-icon>
-            <h2>Sou Cliente</h2>
-            <p>Configure seu carro ou acompanhe seus pedidos.</p>
-          </div>
-          <button mat-flat-button color="primary" class="full-width">Entrar</button>
-        </mat-card-content>
-      </mat-card>
-
-      <mat-card class="access-card">
-        <mat-card-content class="card-layout">
-          <div class="content-top">
-            <mat-icon class="card-icon">badge</mat-icon>
-            <h2>Área Interna (Funcionário)</h2>
-            <p>Acesso ao sistema de produção e RH.</p>
-          </div>
-          <button mat-flat-button color="primary" class="btn-corporate full-width">Acesso Corporativo</button>
-        </mat-card-content>
-      </mat-card>
-    </div>
+    <router-outlet></router-outlet>
   </main>
 
   <footer class="footer">

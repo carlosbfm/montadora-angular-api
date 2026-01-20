@@ -1,0 +1,41 @@
+<div class="login-container">
+  <mat-card class="login-card">
+    <h1 class="login-title">
+      Acesso do {{ tipoLogin === 'funcionario' ? 'Funcionário' : 'Cliente' }}
+    </h1>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      
+      @if (tipoLogin === 'funcionario') {
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Matrícula</mat-label>
+          <input matInput formControlName="matricula">
+          <mat-icon matSuffix>badge</mat-icon>
+        </mat-form-field>
+      }
+
+      @if (tipoLogin === 'cliente') {
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>E-mail</mat-label>
+          <input matInput formControlName="email">
+          <mat-icon matSuffix>email</mat-icon>
+        </mat-form-field>
+      }
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Senha*</mat-label>
+        <input matInput [type]="hidePassword ? 'password' : 'text'" formControlName="senha">
+        <mat-icon matSuffix (click)="hidePassword = !hidePassword" style="cursor: pointer;">
+          {{ hidePassword ? 'visibility_off' : 'visibility' }}
+        </mat-icon>
+      </mat-form-field>
+
+      <div class="login-actions">
+        <button mat-flat-button color="primary" [disabled]="loginForm.invalid">
+          Entrar
+        </button>
+        <button mat-button type="button" routerLink="/">Voltar</button>
+      </div>
+    </form>
+  </mat-card>
+</div>
